@@ -1,0 +1,18 @@
+.-schedule{
+  background: #fff;
+
+  th{
+    padding-left: 4px;
+    color: $color-main;
+  }
+
+  td{
+    padding-left: 8px;
+  }
+}
+
+.-sub{
+  th{
+    color: $color-sub;
+  }
+}

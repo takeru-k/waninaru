@@ -1,0 +1,41 @@
+.-price{
+  background: #fff;
+
+  th{
+    color: #fff;
+    font-weight: normal;
+    padding-left: 4px;
+
+    span{
+      background: $color-main;
+      padding: 4px 12px;
+    }
+
+  }
+
+  td{
+    padding-left: 8px;
+
+    span{
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.table-price__note{
+  font-size: 0.9rem;
+  padding: 16px 8px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  li{
+    padding-bottom: 4px;
+    line-height: 1.65;
+  }
+}
+
+@media #{$mq_pc}{
+  .table-price__note{
+    padding-top: 40px;
+  }
+}

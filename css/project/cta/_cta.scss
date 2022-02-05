@@ -1,0 +1,77 @@
+.cta{
+  text-align: center;
+  background: url(../images/cta-bg.jpeg) center center no-repeat;
+  padding: 60px 0;
+}
+
+.cta__wrapper{
+  background: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media #{$mq_sp}{
+  .cta__body{
+    padding-top: 24px;
+  }
+}
+
+.cta__number{
+  font-family: 'Futura';
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: .1em;
+  position: relative;
+  padding-left: 28px;
+
+
+  &:before{
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url(../images/icon-tel.svg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.cta__ttl{
+  line-height: 1.5;
+  font-size: 24px;
+
+  span{
+    display: block;
+    color: $color-sub;
+    font-family: 'futura';
+    font-weight: normal;
+    font-size: 1rem;
+    letter-spacing: .3em;
+  }
+}
+
+.cta__txt{
+  padding-top: 16px;
+}
+
+.cta__number__hour{
+  font-size: 0.9rem;
+}
+
+@media #{$mq_tab}{
+  .cta__wrapper{
+    display: flex;
+  }
+
+  .cta__header{
+    width: 50%;
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .cta__body{
+    width: 50%;
+  }
+}

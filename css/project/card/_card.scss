@@ -1,0 +1,78 @@
+.card{
+  padding: 16px;
+}
+
+
+
+.card__ttl__icon{
+  width: 40px;
+  height: 40px;
+}
+
+.card__ttl{  
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -64px;
+}
+
+.card__ttl__heading{
+  padding-left: 12px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.card__ttl__en{
+  color: $color-main;
+  display: block;
+  font-size: 0.9rem;
+  font-family: 'futura';
+  font-weight: normal;
+  letter-spacing: .3em;
+}
+
+.card__txts{
+  padding: 24px 40px 0;
+}
+
+@media #{$mq_sp}{
+  
+}
+
+@media #{$mq_pc}{
+  .cards{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card{
+    width: 33%;
+  }
+
+  .card:nth-child(2){
+    border-right: 1px solid #c4c4c4;
+    border-left: 1px solid #c4c4c4;
+  }
+}
+
+/* スマホとタブレットの表示設定 */
+@media #{$mq_sp-tab}{
+  .card:first-child{
+    padding-bottom: 40px;
+  }
+
+  .card:nth-child(2){
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .card:nth-child(2){
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+  }
+
+  .card:nth-child(3){
+    padding-top: 40px;
+  }
+}

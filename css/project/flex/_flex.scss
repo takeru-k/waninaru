@@ -1,0 +1,32 @@
+.flex__content{
+  padding-top: 16px;
+}
+
+.flex__txt{
+  padding-bottom: 8px;
+}
+
+@media #{$mq_pc}{
+  .flex{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex__content{
+    width: 50%;
+  }
+}
+
+.flex-white{
+  background: #fff;
+  padding: 24px 8px 12px;
+}
+
+@media #{$mq_pc}{
+  .flex-white{
+    padding: 60px 48px 24px;
+    .flex__content{
+      padding-top: 0;
+    }
+  }
+}

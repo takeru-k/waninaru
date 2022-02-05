@@ -1,0 +1,190 @@
+/*---------------------------------
+
+  header
+
+---------------------------------*/
+.header{
+  width: 100%;
+  z-index: 100;
+}
+
+.header__inner{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  align-items: center;
+}
+
+.header__logo{
+  width: 200px;
+}
+
+.pc-nav{
+  display: none;
+}
+
+/*headerのPC用表示設定*/
+@media #{$mq_pc}{
+  .header__right{
+    display: none;
+  }
+
+  .header__inner{
+    padding-right: 6%;
+    padding-left: 6%;
+    margin: 0 auto;
+    height: 100px;
+  }
+
+  .pc-nav{
+    display: block;
+
+    ul{
+      display: flex;
+    }
+
+    li{
+      margin-left: 24px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: .3s;
+
+      a{
+        text-decoration: none;
+      }
+
+      &:hover{
+        opacity: 0.8;
+        color: $color-main;
+      }
+    }
+  }
+
+  .current-menu-item{
+    color: $color-main;
+    border-bottom: 2px solid $color-main;
+  }
+}
+
+/*---------------------------------
+
+  ハンバーガーメニュー
+
+---------------------------------*/
+.openBtn{
+  position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+  cursor: pointer;
+  width: 50px;
+  height:50px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openBtn span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: $color-main;
+    width: 45%;
+  }
+
+.openBtn span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openBtn span:nth-of-type(2) {
+  top:23px;
+}
+
+.openBtn span:nth-of-type(3) {
+  top:31px;
+}
+
+.openBtn span:nth-of-type(3)::after {
+  content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
+  position: absolute;
+  top:5px;
+  left:-2px;
+  color: $color-main;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+.openBtn.active span:nth-of-type(3)::after {
+  content:"Close";/*3つ目の要素のafterにClose表示を指定*/
+  transform: translateY(0) rotate(-45deg);
+  top:5px;
+  left:4px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.openBtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openBtn.active span:nth-of-type(2) {
+  opacity: 0;/*真ん中の線は透過*/
+}
+
+.openBtn.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/*---------------------------------
+
+  global-navigation
+
+---------------------------------*/
+.gnav{
+  background: $color-main;
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 98;
+}
+
+.gnav__wrap{
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.gnav__menu__item{
+  padding: 32px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.gnav__menu__item a{
+  color: #fff;
+  font-weight: bold;
+  padding: 24px;
+  text-decoration: none;
+  transition: .5s;
+  position: relative;
+
+  &:before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url(../images/arrow-menu.svg) no-repeat;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.gnav__menu__item a:hover{
+    color: #666;
+}
